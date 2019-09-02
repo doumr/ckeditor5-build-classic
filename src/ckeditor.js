@@ -27,6 +27,8 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
+import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -52,7 +54,9 @@ ClassicEditor.builtinPlugins = [
 	Paragraph,
 	PasteFromOffice,
 	Table,
-	TableToolbar
+	TableToolbar,
+	FontSize,
+	FontColor,
 ];
 
 // Editor configuration.
@@ -61,8 +65,11 @@ ClassicEditor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
+			'fontSize',
+			'fontColor',
 			'bold',
 			'italic',
+			'|',
 			'link',
 			'bulletedList',
 			'numberedList',
@@ -88,6 +95,70 @@ ClassicEditor.defaultConfig = {
 			'tableRow',
 			'mergeTableCells'
 		]
+	},
+	fontColor: {
+		colors: [
+			{
+				color: 'var(--black, #000)',
+				label: 'Černá',
+			},
+			{
+				color: 'var(--gray-dark, #343a40)',
+				label: 'Tmavě šedá',
+			},
+			{
+				color: 'var(--gray, #6c757d)',
+				label: 'Šedá',
+			},
+			{
+				color: 'var(--light, #f8f9fa)',
+				label: 'Světle šedá',
+			},
+			{
+				color: 'var(--white, #fff)',
+				label: 'Bílá',
+			},
+			{
+				color: 'var(--blue, #007bff)',
+				label: 'Modrá',
+			},
+			{
+				color: 'var(--indigo, #6610f2)',
+				label: 'Indigo',
+			},
+			{
+				color: 'var(--purple, #6f42c1)',
+				label: 'Fialová',
+			},
+			{
+				color: 'var(--pink, #e83e8c)',
+				label: 'Růžová',
+			},
+			{
+				color: 'var(--red, #dc3545)',
+				label: 'Červená',
+			},
+			{
+				color: 'var(--orange, #fd7e14)',
+				label: 'Oranžová',
+			},
+			{
+				color: 'var(--yellow, #ffc107)',
+				label: 'Žlutá',
+			},
+			{
+				color: 'var(--green, #28a745)',
+				label: 'Zelená',
+			},
+			{
+				color: 'var(--teal, #20c997)',
+				label: 'Šedozelená',
+			},
+			{
+				color: 'var(--cyan, #17a2b8)',
+				label: 'Tyrkysová',
+			},
+		],
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
 	language: 'cs'
