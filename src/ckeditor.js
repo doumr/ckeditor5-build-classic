@@ -7,6 +7,7 @@
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
@@ -36,6 +37,7 @@ export default class ClassicEditor extends ClassicEditorBase {}
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
 	Essentials,
+	Alignment,
 	UploadAdapter,
 	Autoformat,
 	Bold,
@@ -71,6 +73,7 @@ ClassicEditor.defaultConfig = {
 			'fontColor',
 			'bold',
 			'italic',
+			'alignment',
 			'|',
 			'link',
 			'bulletedList',
